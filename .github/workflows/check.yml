@@ -1,0 +1,21 @@
+name: Verify paper computations
+on:
+  push:
+    paths:
+      - dimensions.py
+      - power_series.py
+      - ramero.py
+      - check.py
+      
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout this repository
+      uses: actions/checkout@v4
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+    - name: Verify computations
+      run: python check.py
