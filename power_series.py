@@ -78,11 +78,20 @@ class CoeffComputer:
             return c
 
     def F(self,i):
+        """
+        Compute the partial fractions expansion for the power series F_i(x)
+        as given in 2.8.
+        """
         if i not in self._Fs:
             self._Fs[i] = apart(Delta(i-1,self.F(i-1), m=self.m(i-1,0)) * x**(-i)) * x**i
         return self._Fs[i]
 
     def n(self,d):
+        """
+        Given a degree d, compute the lower bound n(d) given in 1.14 using the
+        results 2.5 and 2.14 to get the non-recursive formula
+            n(d) = n0(d,m(0,0) + ... + m(d-2,0)).
+        """
         r = sum([self.m(i,0) for i in range(d-1)])
         return r + math.ceil(Fraction(math.comb(d+r,d) - 1,r))
 
