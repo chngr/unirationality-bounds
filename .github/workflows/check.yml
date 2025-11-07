@@ -1,5 +1,6 @@
 name: Verify paper computations
 on:
+  workflow_dispatch:
   push:
     paths:
       - dimensions.py
