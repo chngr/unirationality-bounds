@@ -3,3 +3,5 @@
 This repository contains code that verifies the numerical computations performed
 in the paper "Unirationality of hypersurfaces via highly tangent lines" by
 Raymond Cheng, see [here](https://chngr.github.io/assets/unirationality.pdf).
+
+[![Verify paper computations](https://github.com/chngr/unirationality-bounds/actions/workflows/check.yml/badge.svg)](https://github.com/chngr/unirationality-bounds/actions/workflows/check.yml)
